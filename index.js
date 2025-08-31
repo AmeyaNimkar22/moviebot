@@ -34,8 +34,9 @@ app.post("/webhook", async (req, res) => {
 
       // Call TMDb API for popular movies in that genre
       const response = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&page=1`
-      );
+  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&page=1`
+);
+
 
       const movies = response.data.results;
       const randomMovie = movies[Math.floor(Math.random() * movies.length)];
